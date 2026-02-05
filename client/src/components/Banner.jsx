@@ -8,7 +8,7 @@ const Banner = () => {
             image: assets.banner1,
             text: (
                 <>
-                   Fresh Trends for <br /> Modern Fashion
+                    Sophisticated Style, <br /> Timeless Charm
                 </>
             ),
             color: "#0f484e", // banner1 text color
@@ -17,7 +17,7 @@ const Banner = () => {
             image: assets.banner2,
             text: (
                 <>
-                    Tradition meets <br /> innovation.
+                    Effortless Style <br /> for Every Occasion
                 </>
             ),
             color: "#83644a", // banner2 text color
@@ -29,7 +29,7 @@ const Banner = () => {
             image: assets.banner6,
             text: (
                 <>
-                    Fresh Trends for <br /> Modern Fashion
+                    Sophisticated Style, <br /> Timeless Charm
                 </>
             ),
             color: "#0f484e",
@@ -38,7 +38,7 @@ const Banner = () => {
             image: assets.banner5,
             text: (
                 <>
-                    Tradition meets <br /> innovation.
+                    Effortless Style <br /> for Every Occasion
                 </>
             ),
             color: "#83644a",
@@ -90,7 +90,7 @@ const Banner = () => {
                 ))}
 
                 {/* Animated Text & Button */}
-                <div className="absolute inset-0 flex items-end pb-10">
+                {/* <div className="absolute inset-0 flex items-center">
                     <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
                         <AnimatePresence mode="wait">
                             <motion.div
@@ -104,18 +104,18 @@ const Banner = () => {
                                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl  2xl:text-7xl font-bold drop-shadow-lg mb-2 sm:mb-5 leading-tight">
                                     {activeSlides[currentIndex].text}
                                 </h1>
-                                {/* <motion.button
+                                <motion.button
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.3, duration: 0.8 }}
                                     className="bg-white text-md sm:text-md lg:text-lg text-gray-900 cursor-pointer px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition"
                                 >
                                     Shop Now
-                                </motion.button> */}
+                                </motion.button>
                             </motion.div>
                         </AnimatePresence>
                     </div>
-                </div>
+                </div> */}
 
                 {/* Navigation Dots */}
                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-3">

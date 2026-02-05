@@ -25,7 +25,7 @@ const Footer = () => {
                     {/* Logo */}
                     <div>
                         <Link to="/">
-                            <img src={assets.logo} alt="Krishnas Jewellers" className="w-40 mb-4" />
+                            <img src={assets.logo1} alt="Krishnas Jewellers" className="w-40 mb-4" />
                         </Link>
                         <p className="text-lg leading-6">
                             Explore stunning collections of handcrafted gold, diamond, and silver jewellery.
@@ -44,7 +44,7 @@ const Footer = () => {
                shadow lg:shadow-none
                flex justify-between items-center"
                         >
-                            Diamond Jewellery
+                            Categories
                             <span className="ml-2 block lg:hidden">
                                 <FontAwesomeIcon icon={open === "cat" ? faAngleUp : faAngleDown} />
                             </span>
@@ -57,34 +57,42 @@ const Footer = () => {
                         >
                             <ul className="space-y-2 text-lg text-gray-800">
                                 <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                                    Diamond Ring
+                                    Dresses
                                 </li>
                                 <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                                    Diamond Earrings
+                                    Kurtis
                                 </li>
                                 <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                                    Diamond Pendant
+                                    Kurta Sets
                                 </li>
                                 <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                                    Diamond Bracelets
+                                    Sarees
                                 </li>
                                 <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                                    Diamond Necklace
+                                    Ethnic Wear
                                 </li>
                                 <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                                    Diamond Pendant Set
+                                    Tops & Tunics
+                                </li>
+                                <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                    Jeans & Trousers
+                                </li>
+                                <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                    Suits & Dress Materials
                                 </li>
                             </ul>
                         </div>
 
                         {/* Desktop View – Simple List */}
                         <ul className="hidden lg:block space-y-2 text-lg">
-                            <li className="cursor-pointer hover:text-gray-900">Ring</li>
-                            <li className="cursor-pointer hover:text-gray-900">Earrings</li>
-                            <li className="cursor-pointer hover:text-gray-900">Pendant</li>
-                            <li className="cursor-pointer hover:text-gray-900">Bracelets</li>
-                            <li className="cursor-pointer hover:text-gray-900">Necklace</li>
-                            <li className="cursor-pointer hover:text-gray-900">Pendant Set</li>
+                            <li className="cursor-pointer hover:text-gray-900">Dresses</li>
+                            <li className="cursor-pointer hover:text-gray-900">Kurtis</li>
+                            <li className="cursor-pointer hover:text-gray-900">Kurta Sets</li>
+                            <li className="cursor-pointer hover:text-gray-900">Sarees</li>
+                            <li className="cursor-pointer hover:text-gray-900">Ethnic Wear</li>
+                            <li className="cursor-pointer hover:text-gray-900">Tops & Tunics</li>
+                            <li className="cursor-pointer hover:text-gray-900">Jeans & Trousers</li>
+                            <li className="cursor-pointer hover:text-gray-900">Suits & Dress Materials</li>
                         </ul>
                     </div>
 

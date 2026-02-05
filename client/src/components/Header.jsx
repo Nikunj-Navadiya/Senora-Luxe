@@ -8,7 +8,6 @@ import { Link, useNavigate } from "react-router-dom";
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [goldOpen, setGoldOpen] = useState(false);
-    const [diamondOpen, setDiamondOpen] = useState(false);
     const [activeMenu, setActiveMenu] = useState("");
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate();
@@ -38,18 +37,12 @@ const Header = () => {
     const handleMenuClick = (menu) => {
         setActiveMenu(activeMenu === menu ? "" : menu);
         setGoldOpen(false);
-        setDiamondOpen(false);
+
     };
 
     // Handle mobile dropdowns (close other when one opens)
     const toggleGold = () => {
         setGoldOpen(!goldOpen);
-        setDiamondOpen(false);
-    };
-
-    const toggleDiamond = () => {
-        setDiamondOpen(!diamondOpen);
-        setGoldOpen(false);
     };
 
     return (
@@ -58,7 +51,7 @@ const Header = () => {
             <div className="flex items-center justify-between text-[20px] font-semibold sm:px-[5vw] md:px-[7vw] lg:px-[9vw] px-4 py-4">
                 {/* Logo */}
                 <div>
-                    <Link to={"/"}><img src={assets.logo} alt="Logo" className="h-14" /></Link>
+                    <Link to={"/"}><img src={assets.logo1} alt="Logo" className="h-14" /></Link>
                 </div>
 
                 {/* Desktop Menu */}
@@ -79,42 +72,25 @@ const Header = () => {
                     </li></Link>
 
 
-                    {/* Gold Jewellery Dropdown */}
+                    {/*  Categories Dropdown */}
                     <li
                         onClick={() => handleMenuClick("Gold")}
                         className={`relative group cursor-pointer px-3 py-1 rounded-md transition-all duration-300 ${activeMenu === "Gold" ? "text-[#0f484e]" : "hover:text-gray-900"}`}>
-                        Gold Jewellery
-                        <ul className="absolute hidden top-10 group-hover:flex bg-white text-color shadow-lg rounded p-3 z-10 gap-4 w-[340px] border border-gray-200">
+                        Categories
+                        <ul className="absolute hidden top-10 group-hover:flex bg-white text-color shadow-lg rounded p-3 z-10 gap-4 w-[245px] border border-gray-200">
                             <div className="flex flex-col">
-                                <li className="px-4 py-2 hover:bg-gray-100">Rings</li>
-                                <li className="px-4 py-2 hover:bg-gray-100">Earrings</li>
-                                <li className="px-4 py-2 hover:bg-gray-100">Pendant</li>
-                                <li className="px-4 py-2 hover:bg-gray-100">Bracelets</li>
-                                <li className="px-4 py-2 hover:bg-gray-100">kada</li>
-                            </div>
-                            <div className="flex flex-col">
-                                <li className="px-4 py-2 hover:bg-gray-100">Chain</li>
-                                <li className="px-4 py-2 hover:bg-gray-100">Necklace</li>
-                                <li className="px-4 py-2 hover:bg-gray-100">Pendant Set</li>
-                                <li className="px-4 py-2 hover:bg-gray-100">Mangalsutra</li>
+                                <li className="px-4 py-2 hover:bg-gray-100">Dresses</li>
+                                <li className="px-4 py-2 hover:bg-gray-100">Kurtis </li>
+                                <li className="px-4 py-2 hover:bg-gray-100">Kurta Sets</li>
+                                <li className="px-4 py-2 hover:bg-gray-100">Sarees</li>
+                                <li className="px-4 py-2 hover:bg-gray-100">Ethnic Wear</li>
+                                <li className="px-4 py-2 hover:bg-gray-100">Tops & Tunics</li>
+                                <li className="px-4 py-2 hover:bg-gray-100">Jeans & Trousers</li>
+                                <li className="px-4 py-2 hover:bg-gray-100">Suits & Dress Materials</li>
                             </div>
                         </ul>
                     </li>
 
-                    {/* Diamond Jewellery Dropdown */}
-                    <li onClick={() => handleMenuClick("Diamond")}
-                        className={`relative group cursor-pointer px-3 py-1 rounded-md transition-all duration-300 ${activeMenu === "Diamond" ? "text-[#0f484e]" : "hover:text-gray-900"}`} >
-                        Diamond Jewellery
-                        <ul className="absolute top-10 hidden group-hover:block bg-white text-color shadow-lg rounded p-2 z-10 min-w-[180px] border border-gray-200">
-                            <li className="px-4 py-2 hover:bg-gray-100">Diamond Ring</li>
-                            <li className="px-4 py-2 hover:bg-gray-100">Diamond Earrings</li>
-                            <li className="px-4 py-2 hover:bg-gray-100">Diamond Pendant</li>
-                            <li className="px-4 py-2 hover:bg-gray-100">Diamond Bracelets</li>
-                            <li className="px-4 py-2 hover:bg-gray-100">Diamond Necklace</li>
-                            <li className="px-4 py-2 hover:bg-gray-100">Diamond Pendant Set</li>
-                            <li className="px-4 py-2 hover:bg-gray-100">Diamond Kada</li>
-                        </ul>
-                    </li>
 
                     <Link to={"/contact"}>
                         <li onClick={() => handleMenuClick("Contact")}
@@ -184,13 +160,13 @@ const Header = () => {
                             </Link>
 
 
-                            {/* Gold Dropdown */}
+                            {/* Categories Dropdown */}
                             <li className="border border-gray-200 rounded-md px-3 py-2">
                                 <div
                                     onClick={toggleGold}
                                     className="flex justify-between items-center cursor-pointer"
                                 >
-                                    <span className="font-medium">Gold Jewellery</span>
+                                    <span className="font-medium">Categories</span>
                                     {goldOpen ? <FaChevronUp /> : <FaChevronDown />}
                                 </div>
                                 {goldOpen && (
@@ -201,7 +177,7 @@ const Header = () => {
                                             setActiveMenu("Rings");
                                         }}
                                             className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Rings" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
-                                            Rings
+                                            Dresses
                                         </li>
 
                                         <li onClick={() => {
@@ -209,7 +185,7 @@ const Header = () => {
                                             setActiveMenu("Earrings");
                                         }}
                                             className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Earrings" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
-                                            Earrings
+                                            Kurtis
                                         </li>
 
                                         <li onClick={() => {
@@ -217,7 +193,7 @@ const Header = () => {
                                             setActiveMenu("Pendant");
                                         }}
                                             className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Pendant" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
-                                            Pendant
+                                            Kurta Sets
                                         </li>
 
                                         <li onClick={() => {
@@ -225,7 +201,7 @@ const Header = () => {
                                             setActiveMenu("Bracelets");
                                         }}
                                             className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Bracelets" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
-                                            Bracelets
+                                            Sarees
                                         </li>
 
                                         <li onClick={() => {
@@ -233,7 +209,7 @@ const Header = () => {
                                             setActiveMenu("Kada");
                                         }}
                                             className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Lucky" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`} >
-                                            Kada
+                                            Ethnic Wear
                                         </li>
 
                                         <li onClick={() => {
@@ -241,7 +217,7 @@ const Header = () => {
                                             setActiveMenu("Chain");
                                         }}
                                             className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Chain" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
-                                            Chain
+                                            Tops & Tunics
                                         </li>
 
                                         <li onClick={() => {
@@ -249,7 +225,7 @@ const Header = () => {
                                             setActiveMenu("Necklace");
                                         }}
                                             className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Necklace" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
-                                            Necklace
+                                            Jeans & Trousers
                                         </li>
 
                                         <li onClick={() => {
@@ -258,95 +234,9 @@ const Header = () => {
                                         }}
                                             className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Pendant Set" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}
                                         >
-                                            Pendant Set
+                                            Suits & Dress Materials
                                         </li>
 
-                                        <li onClick={() => {
-                                            setMenuOpen(false);
-                                            setActiveMenu("Mangalsutra");
-                                        }}
-                                            className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Mangalsutra" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
-                                            Mangalsutra
-                                        </li>
-
-                                    </ul>
-                                )}
-
-                            </li>
-
-                            {/* Diamond Dropdown */}
-                            <li className="border border-gray-200 rounded-md px-3 py-2">
-                                <div
-                                    onClick={toggleDiamond}
-                                    className="flex justify-between items-center cursor-pointer"
-                                >
-                                    <span className="font-medium">Diamond Jewellery</span>
-                                    {diamondOpen ? <FaChevronUp /> : <FaChevronDown />}
-                                </div>
-                                {diamondOpen && (
-                                    <ul className="pl-4 mt-2 border-l border-gray-300 flex flex-col gap-2 text-base">
-                                        <li
-                                            onClick={() => {
-                                                setMenuOpen(false);
-                                                setActiveMenu("Diamond Ring");
-                                            }}
-                                            className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "necklace" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
-                                            Diamond Ring
-                                        </li>
-
-                                        <li
-                                            onClick={() => {
-                                                setMenuOpen(false);
-                                                setActiveMenu("Diamond Earrings");
-                                            }}
-                                            className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300  ${activeMenu === "earrings" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
-                                            Diamond Earrings
-                                        </li>
-
-                                        <li
-                                            onClick={() => {
-                                                setMenuOpen(false);
-                                                setActiveMenu("Diamond Pendant");
-                                            }}
-                                            className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "bracelets" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
-                                            Diamond Pendant
-                                        </li>
-
-                                        <li
-                                            onClick={() => {
-                                                setMenuOpen(false);
-                                                setActiveMenu("Diamond Bracelets");
-                                            }}
-                                            className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "rings" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
-                                            Diamond Bracelets
-                                        </li>
-
-                                        <li
-                                            onClick={() => {
-                                                setMenuOpen(false);
-                                                setActiveMenu("Diamond Necklace");
-                                            }}
-                                            className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "rings" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
-                                            Diamond Necklace
-                                        </li>
-
-                                        <li
-                                            onClick={() => {
-                                                setMenuOpen(false);
-                                                setActiveMenu("Diamond Pendant Set");
-                                            }}
-                                            className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "rings" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
-                                            Diamond Pendant Set
-                                        </li>
-
-                                        <li
-                                            onClick={() => {
-                                                setMenuOpen(false);
-                                                setActiveMenu("Diamond Kada");
-                                            }}
-                                            className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "rings" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
-                                            Diamond Kada
-                                        </li>
                                     </ul>
                                 )}
 
