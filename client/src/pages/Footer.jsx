@@ -45,7 +45,7 @@ const Footer = () => {
                shadow lg:shadow-none
                flex justify-between items-center"
                         >
-                            Categories
+                            My Account
                             <span className="ml-2 block lg:hidden">
                                 <FontAwesomeIcon icon={open === "cat" ? faAngleUp : faAngleDown} />
                             </span>
@@ -58,42 +58,26 @@ const Footer = () => {
                         >
                             <ul className="space-y-2 text-lg text-gray-800">
                                 <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                                    Dresses
+                                    Register
                                 </li>
                                 <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                                    Kurtis
+                                    Login
                                 </li>
                                 <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                                    Kurta Sets
+                                    View Order
                                 </li>
                                 <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                                    Sarees
-                                </li>
-                                <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                                    Ethnic Wear
-                                </li>
-                                <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                                    Tops & Tunics
-                                </li>
-                                <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                                    Jeans & Trousers
-                                </li>
-                                <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                                    Suits & Dress Materials
+                                    Track Your Shipment
                                 </li>
                             </ul>
                         </div>
 
                         {/* Desktop View – Simple List */}
-                        <ul className="hidden lg:block space-y-2 text-lg">
-                            <li className="cursor-pointer hover:text-gray-900">Dresses</li>
-                            <li className="cursor-pointer hover:text-gray-900">Kurtis</li>
-                            <li className="cursor-pointer hover:text-gray-900">Kurta Sets</li>
-                            <li className="cursor-pointer hover:text-gray-900">Sarees</li>
-                            <li className="cursor-pointer hover:text-gray-900">Ethnic Wear</li>
-                            <li className="cursor-pointer hover:text-gray-900">Tops & Tunics</li>
-                            <li className="cursor-pointer hover:text-gray-900">Jeans & Trousers</li>
-                            <li className="cursor-pointer hover:text-gray-900">Suits & Dress Materials</li>
+                        <ul className="hidden lg:block space-y-2 text-lg text-gray-900">
+                            <li><Link to='/'>Register</Link></li>
+                            <li><Link to='/'>Login</Link></li>
+                            <li><Link to='/'>View Order</Link></li>
+                            <li><Link to='/'>Track Your Shipment</Link></li>
                         </ul>
                     </div>
 
@@ -122,9 +106,6 @@ const Footer = () => {
                         >
                             <ul className="space-y-2 text-lg text-gray-800">
                                 <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100">
-                                    <Link to="/about">About Us</Link>
-                                </li>
-                                <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100">
                                     <Link to="/privacy-policy">Privacy Policy</Link>
                                 </li>
                                 <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100">
@@ -143,8 +124,7 @@ const Footer = () => {
                         </div>
 
                         {/* Desktop View – Normal List */}
-                        <ul className="hidden lg:block space-y-2 text-lg text-gray-700">
-                            <li><Link to="/about">About Us</Link></li>
+                        <ul className="hidden lg:block space-y-2 text-lg text-gray-900">
                             <li><Link to="/privacy-policy">Privacy Policy</Link></li>
                             <li><Link to="/Refund-policy">Refund Policy</Link></li>
                             <li><Link to="/Shipping-policy">Shipping Policy</Link></li>
@@ -159,9 +139,9 @@ const Footer = () => {
                             Contact Us
                         </h3>
                         <div className="text-lg space-y-2">
-                            <p>📞 +91 84603 61497</p>
-                            <p>✉️ nikunjnavadiya7@gmail.com</p>
-                            <p>📍 Gujarat, India</p>
+                            <p>📞 +91 84696 70927</p>
+                            <p>✉️ support@senoraluxe.com</p>
+                            <p>📍 140-143, Raghuvir Shoppers, Near Lajamani Chowk, Mota Varchha, Surat, Gujarat, India</p>
                         </div>
                     </div>
 
