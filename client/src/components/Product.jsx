@@ -25,7 +25,7 @@ const Product = () => {
                         <div className="overflow-hidden">
                             <img
                                 src={assets.product}
-                                className="w-full h-[330px] object-cover transform hover:scale-110 transition-transform duration-500"
+                                className="w-full  object-cover transform hover:scale-110 transition-transform duration-500"
                             />
                         </div>
                         <div className="p-5 text-center">
@@ -45,7 +45,7 @@ const Product = () => {
                         <div className="overflow-hidden">
                             <img
                                 src={assets.product2}
-                                className="w-full h-[330px] object-cover transform hover:scale-110 transition-transform duration-500"
+                                className="w-full  object-cover transform hover:scale-110 transition-transform duration-500"
                             />
                         </div>
                         <div className="p-5 text-center">
@@ -65,7 +65,7 @@ const Product = () => {
                         <div className="overflow-hidden">
                             <img
                                 src={assets.product3}
-                                className="w-full h-[330px] object-cover transform hover:scale-110 transition-transform duration-500"
+                                className="w-full  object-cover transform hover:scale-110 transition-transform duration-500"
                             />
                         </div>
                         <div className="p-5 text-center">
@@ -85,7 +85,7 @@ const Product = () => {
                         <div className="overflow-hidden">
                             <img
                                 src={assets.product4}
-                                className="w-full h-[330px] object-cover transform hover:scale-110 transition-transform duration-500"
+                                className="w-full  object-cover transform hover:scale-110 transition-transform duration-500"
                             />
                         </div>
                         <div className="p-5 text-center">
@@ -105,7 +105,7 @@ const Product = () => {
                         <div className="overflow-hidden">
                             <img
                                 src={assets.product5}
-                                className="w-full h-[330px] object-cover transform hover:scale-110 transition-transform duration-500"
+                                className="w-full object-cover transform hover:scale-110 transition-transform duration-500"
                             />
                         </div>
                         <div className="p-5 text-center">
@@ -125,7 +125,7 @@ const Product = () => {
                         <div className="overflow-hidden">
                             <img
                                 src={assets.product6}
-                                className="w-full h-[330px] object-cover transform hover:scale-110 transition-transform duration-500"
+                                className="w-full object-cover transform hover:scale-110 transition-transform duration-500"
                             />
                         </div>
                         <div className="p-5 text-center">
@@ -145,7 +145,7 @@ const Product = () => {
                         <div className="overflow-hidden">
                             <img
                                 src={assets.product7}
-                                className="w-full h-[330px] object-cover transform hover:scale-110 transition-transform duration-500"
+                                className="w-full  object-cover transform hover:scale-110 transition-transform duration-500"
                             />
                         </div>
                         <div className="p-5 text-center">
@@ -165,7 +165,7 @@ const Product = () => {
                         <div className="overflow-hidden">
                             <img
                                 src={assets.product8}
-                                className="w-full h-[330px] object-cover transform hover:scale-110 transition-transform duration-500"
+                                className="w-full object-cover transform hover:scale-110 transition-transform duration-500"
                             />
                         </div>
                         <div className="p-5 text-center">

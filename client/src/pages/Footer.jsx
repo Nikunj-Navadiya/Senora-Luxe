@@ -29,7 +29,7 @@ const Footer = () => {
                             <img src={assets.logo1} alt="Krishnas Jewellers" className="w-40 mb-4" />
                         </Link>
                         <p className="text-lg leading-6">
-                            Explore stunning collections of handcrafted gold, diamond, and silver jewellery.
+                            Premium fabric platform offering stylish, high-quality textiles online effortlessly.
                         </p>
                     </div>
 
@@ -149,7 +149,7 @@ const Footer = () => {
 
                 {/* Footer Bottom */}
                 <div className="border-t border-gray-300 mt-10 lg:mt-12 pt-6 text-center md:text-right text-lg pb-5">
-                    © {new Date().getFullYear()} Krishnas Jewellers. All Rights Reserved.
+                    © {new Date().getFullYear()} Senora Luxe. All Rights Reserved.
                 </div>
             </div>
         </footer>
