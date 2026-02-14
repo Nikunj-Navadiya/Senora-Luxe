@@ -18,8 +18,9 @@ const Footer = () => {
     };
 
     return (
-        <footer className="bg-gray-100 text-gray-900">
-            <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] pt-10 lg:pt-14">
+        <footer className="bg-cover bg-center"
+      style={{ backgroundImage: `url(${assets.footer})` }}>
+            <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] pt-10 lg:pt-14 bg-white/70">
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-2 lg:gap-10">
 
                     {/* Logo */}

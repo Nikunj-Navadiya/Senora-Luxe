@@ -25,6 +25,7 @@ import about4 from './about4.png'
 import about5 from './about5.png'
 import contact from './contact.png'
 import favicons from './favicons.png'
+import footer from './footer.jpg'
 
 
 const assets = {
@@ -55,6 +56,7 @@ const assets = {
     about5,
     contact,
     favicons,
+    footer,
 }
 
 export default assets
