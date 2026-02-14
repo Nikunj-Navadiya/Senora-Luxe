@@ -17,6 +17,7 @@ import about3 from './about3.png'
 import about4 from './about4.png'
 import about5 from './about5.png'
 import contact from './contact.png'
+import favicons from './favicons.png'
 
 
 const assets = {
@@ -39,6 +40,7 @@ const assets = {
     about4,
     about5,
     contact,
+    favicons,
 }
 
 export default assets
