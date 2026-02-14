@@ -5,51 +5,43 @@ const Product = () => {
     const products = [
         {
             id: 1,
-            name: "Gold & Diamond Necklace",
+            name: "Dresses",
             image: assets.product,
-            price: "$1,250",
         },
         {
             id: 2,
-            name: "Royal Gold Bracelet",
-            image: assets.product,
-            price: "$980",
+            name: "Kurtis",
+            image: assets.product2,
         },
         {
             id: 3,
-            name: "Elegant Diamond Earrings",
-            image: assets.product,
-            price: "$750",
+            name: "Kurta Sets",
+            image: assets.product3,
         },
         {
             id: 4,
-            name: "Classic Gold Ring",
-            image: assets.product,
-            price: "$540",
+            name: "Sarees",
+            image: assets.product4,
         },
         {
             id: 5,
-            name: "Pearl & Diamond Pendant",
-            image: assets.product,
-            price: "$1,050",
+            name: "Tops & Tunics",
+            image: assets.product5,
         },
         {
             id: 6,
-            name: "Luxury Diamond Set",
-            image: assets.product,
-            price: "$2,490",
+            name: "Jeans & Trousers",
+            image: assets.product6,
         },
         {
             id: 7,
-            name: "Golden Anklet Charm",
-            image: assets.product,
-            price: "$430",
+            name: "Suits & Dress Materials",
+            image: assets.product7,
         },
         {
             id: 8,
-            name: "Diamond Crown Ring",
-            image: assets.product,
-            price: "$1,320",
+            name: "Salwar Kameez",
+            image: assets.product8,
         },
         
     ];
@@ -59,10 +51,10 @@ const Product = () => {
             {/* Title Section */}
             <div className="text-center mb-12">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold bg-gradient-to-r from-[#b9935a] to-[#e6c77c] bg-clip-text text-transparent tracking-wide">
-                    Luxury Crafted in Gold, Defined by Diamonds
+                    Explore Our Luxury Collections
                 </h1>
                 <p className="text-gray-600 mt-3 text-base md:text-lg max-w-2xl mx-auto">
-                    Discover timeless jewelry designed to shine on every occasion — a perfect blend of elegance and artistry.
+                    Step into the world of Senoraluxe, where every piece reflects sophistication, craftsmanship, and timeless beauty designed for modern elegance.
                 </p>
             </div>
 
@@ -71,21 +63,21 @@ const Product = () => {
                 {products.map((item) => (
                     <div
                         key={item.id}
-                        className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500"
+                        className="group bg-white rounded-2xl shadow-lg overflow-hidden"
                     >
                         <div className="overflow-hidden">
                             <img
                                 src={item.image}
                                 alt={item.name}
-                                className="w-full h-[330px] object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                className="w-full h-[330px] object-cover transform hover:scale-110 transition-transform duration-500"
                             />
                         </div>
                         <div className="p-5 text-center">
-                            <h3 className="text-lg font-semibold text-gray-800 group-hover:text-[#b9935a] transition">
+                            <h3 className="text-lg font-semibold text-gray-800 group-hover:text-[#b9935a]">
                                 {item.name}
                             </h3>
                             <p className="text-[#b9935a] font-medium mt-1">{item.price}</p>
-                            <button className="mt-4 px-5 py-2 rounded-full bg-gradient-to-r from-[#b9935a] to-[#e6c77c] text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300">
+                            <button className="mt-4 px-5 py-2 rounded-full bg-gradient-to-r from-[#b9935a] to-[#e6c77c] text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer">
                                 View Details
                             </button>
                         </div>

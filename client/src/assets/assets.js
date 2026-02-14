@@ -11,6 +11,13 @@ import banner6 from './banner6.png'
 import logo from './logo.svg'
 import logo1 from './logo1.png'
 import product from './product.png'
+import product2 from './product2.png'
+import product3 from './product3.png'
+import product4 from './product4.png'
+import product5 from './product5.png'
+import product6 from './product6.png'
+import product7 from './product7.png'
+import product8 from './product8.png'
 import about1 from './about1.png'
 import about2 from './about2.png'
 import about3 from './about3.png'
@@ -34,6 +41,13 @@ const assets = {
     logo,
     logo1,
     product,
+    product2,
+    product3,
+    product4,
+    product5,
+    product6,
+    product7,
+    product8,
     about1,
     about2,
     about3,
