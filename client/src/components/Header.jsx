@@ -79,14 +79,14 @@ const Header = () => {
                         Categories
                         <ul className="absolute hidden top-10 group-hover:flex bg-white text-color shadow-lg rounded p-3 z-10 gap-4 w-[245px] border border-gray-200">
                             <div className="flex flex-col">
-                                <li className="px-4 py-2 hover:bg-gray-100">Dresses</li>
-                                <li className="px-4 py-2 hover:bg-gray-100">Kurtis </li>
-                                <li className="px-4 py-2 hover:bg-gray-100">Kurta Sets</li>
-                                <li className="px-4 py-2 hover:bg-gray-100">Sarees</li>
-                                <li className="px-4 py-2 hover:bg-gray-100">Ethnic Wear</li>
-                                <li className="px-4 py-2 hover:bg-gray-100">Tops & Tunics</li>
-                                <li className="px-4 py-2 hover:bg-gray-100">Jeans & Trousers</li>
-                                <li className="px-4 py-2 hover:bg-gray-100">Suits & Dress Materials</li>
+                                <Link to={'/dresses'}><li className="px-4 py-2 hover:bg-gray-100">Dresses</li></Link>
+                                <Link><li className="px-4 py-2 hover:bg-gray-100">Kurtis </li></Link>
+                                <Link><li className="px-4 py-2 hover:bg-gray-100">Kurta Sets</li></Link>
+                                <Link><li className="px-4 py-2 hover:bg-gray-100">Sarees</li></Link>
+                                <Link><li className="px-4 py-2 hover:bg-gray-100">Ethnic Wear</li></Link>
+                                <Link><li className="px-4 py-2 hover:bg-gray-100">Tops & Tunics</li></Link>
+                                <Link><li className="px-4 py-2 hover:bg-gray-100">Jeans & Trousers</li></Link>
+                                <Link><li className="px-4 py-2 hover:bg-gray-100">Suits & Dress Materials</li></Link>
                             </div>
                         </ul>
                     </li>
@@ -150,10 +150,10 @@ const Header = () => {
                             </Link>
 
                             <Link to={"/about"}><li
-                               onClick={() => {
-                                handleMenuClick("About");
-                                setMenuOpen(false);
-                            }}
+                                onClick={() => {
+                                    handleMenuClick("About");
+                                    setMenuOpen(false);
+                                }}
                                 className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "About" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
                                 About
                             </li>
@@ -172,70 +172,86 @@ const Header = () => {
                                 {goldOpen && (
                                     <ul className="pl-4 mt-2 border-l border-gray-300 flex flex-col gap-2 text-base">
 
-                                        <li onClick={() => {
-                                            setMenuOpen(false);
-                                            setActiveMenu("Rings");
-                                        }}
-                                            className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Rings" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
-                                            Dresses
-                                        </li>
+                                        <Link to={'/dresses'}>
+                                            <li onClick={() => {
+                                                setMenuOpen(false);
+                                                setActiveMenu("Rings");
+                                            }}
+                                                className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Rings" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
+                                                Dresses
+                                            </li>
+                                        </Link>
 
-                                        <li onClick={() => {
-                                            setMenuOpen(false);
-                                            setActiveMenu("Earrings");
-                                        }}
-                                            className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Earrings" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
-                                            Kurtis
-                                        </li>
+                                        <Link>
+                                            <li onClick={() => {
+                                                setMenuOpen(false);
+                                                setActiveMenu("Earrings");
+                                            }}
+                                                className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Earrings" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
+                                                Kurtis
+                                            </li>
+                                        </Link>
 
-                                        <li onClick={() => {
-                                            setMenuOpen(false);
-                                            setActiveMenu("Pendant");
-                                        }}
-                                            className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Pendant" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
-                                            Kurta Sets
-                                        </li>
+                                        <Link>
+                                            <li onClick={() => {
+                                                setMenuOpen(false);
+                                                setActiveMenu("Pendant");
+                                            }}
+                                                className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Pendant" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
+                                                Kurta Sets
+                                            </li>
+                                        </Link>
 
-                                        <li onClick={() => {
-                                            setMenuOpen(false);
-                                            setActiveMenu("Bracelets");
-                                        }}
-                                            className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Bracelets" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
-                                            Sarees
-                                        </li>
+                                        <Link>
+                                            <li onClick={() => {
+                                                setMenuOpen(false);
+                                                setActiveMenu("Bracelets");
+                                            }}
+                                                className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Bracelets" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
+                                                Sarees
+                                            </li>
+                                        </Link>
 
-                                        <li onClick={() => {
-                                            setMenuOpen(false);
-                                            setActiveMenu("Kada");
-                                        }}
-                                            className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Lucky" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`} >
-                                            Ethnic Wear
-                                        </li>
+                                        <Link>
+                                            <li onClick={() => {
+                                                setMenuOpen(false);
+                                                setActiveMenu("Kada");
+                                            }}
+                                                className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Lucky" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`} >
+                                                Ethnic Wear
+                                            </li>
+                                        </Link>
 
-                                        <li onClick={() => {
-                                            setMenuOpen(false);
-                                            setActiveMenu("Chain");
-                                        }}
-                                            className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Chain" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
-                                            Tops & Tunics
-                                        </li>
+                                        <Link>
+                                            <li onClick={() => {
+                                                setMenuOpen(false);
+                                                setActiveMenu("Chain");
+                                            }}
+                                                className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Chain" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
+                                                Tops & Tunics
+                                            </li>
+                                        </Link>
 
-                                        <li onClick={() => {
-                                            setMenuOpen(false);
-                                            setActiveMenu("Necklace");
-                                        }}
-                                            className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Necklace" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
-                                            Jeans & Trousers
-                                        </li>
+                                        <Link>
+                                            <li onClick={() => {
+                                                setMenuOpen(false);
+                                                setActiveMenu("Necklace");
+                                            }}
+                                                className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Necklace" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}>
+                                                Jeans & Trousers
+                                            </li>
+                                        </Link>
 
-                                        <li onClick={() => {
-                                            setMenuOpen(false);
-                                            setActiveMenu("Pendant Set");
-                                        }}
-                                            className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Pendant Set" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}
-                                        >
-                                            Suits & Dress Materials
-                                        </li>
+                                        <Link>
+                                            <li onClick={() => {
+                                                setMenuOpen(false);
+                                                setActiveMenu("Pendant Set");
+                                            }}
+                                                className={`cursor-pointer px-3 py-2 border rounded-md transition-all duration-300 ${activeMenu === "Pendant Set" ? "border-[#0f484e] text-[#0f484e]" : "border-gray-200 hover:border-[#0f484e]"}`}
+                                            >
+                                                Suits & Dress Materials
+                                            </li>
+                                        </Link>
 
                                     </ul>
                                 )}

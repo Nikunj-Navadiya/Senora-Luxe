@@ -74,8 +74,8 @@ const Footer = () => {
 
                         {/* Desktop View – Simple List */}
                         <ul className="hidden lg:block space-y-2 text-lg text-gray-900">
-                            <li><Link to='/'>Register</Link></li>
-                            <li><Link to='/'>Login</Link></li>
+                            
+                            <li><Link to='/login'>Login</Link></li>
                             <li><Link to='/'>View Order</Link></li>
                             <li><Link to='/'>Track Your Shipment</Link></li>
                         </ul>

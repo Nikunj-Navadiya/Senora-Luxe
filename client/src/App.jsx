@@ -11,6 +11,7 @@ import Refundpolicy from './components/Refundpolicy'
 import Shippingpolicy from './components/Shippingpolicy'
 import Termsofservice from './components/Termsofservice'
 import Contact from './pages/Contact'
+import Dresses from './components/Dresses'
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
             <Route path='/Shipping-policy' element={<Shippingpolicy />} />
             <Route path='/Termsofservice-policy' element={<Termsofservice />} />
             <Route path='/contact' element={<Contact />} />
+            <Route path='/dresses' element={<Dresses />} />
+
 
             
           </Routes>
