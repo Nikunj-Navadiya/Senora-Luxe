@@ -19,7 +19,7 @@ const Footer = () => {
 
     return (
         <footer className="bg-cover bg-center"
-      style={{ backgroundImage: `url(${assets.footer})` }}>
+            style={{ backgroundImage: `url(${assets.footer})` }}>
             <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] pt-10 lg:pt-14 bg-white/70">
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-2 lg:gap-10">
 
@@ -57,24 +57,27 @@ const Footer = () => {
                 bg-white border border-gray-300 rounded-lg p-3`}
                         >
                             <ul className="space-y-2 text-lg text-gray-800">
-                                <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                                    Register
-                                </li>
-                                <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                                    Login
-                                </li>
-                                <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                                    View Order
-                                </li>
-                                <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                                    Track Your Shipment
-                                </li>
+                                <Link to={'/login'}>
+                                    <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                        Login
+                                    </li>
+                                </Link>
+                                <Link>
+                                    <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                        View Order
+                                    </li>
+                                </Link>
+                                <Link>
+                                    <li onClick={closeMenu} className="border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                        Track Your Shipment
+                                    </li>
+                                </Link>
                             </ul>
                         </div>
 
                         {/* Desktop View – Simple List */}
                         <ul className="hidden lg:block space-y-2 text-lg text-gray-900">
-                            
+
                             <li><Link to='/login'>Login</Link></li>
                             <li><Link to='/'>View Order</Link></li>
                             <li><Link to='/'>Track Your Shipment</Link></li>
