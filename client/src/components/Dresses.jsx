@@ -1,53 +1,65 @@
 import React, { useState } from "react";
+import assets from "../assets/assets";
 
 const productData = [
   {
     id: 1,
     name: "Floral Summer Dress",
     category: "Casual",
+    fabric: "Cotton",
     price: 999,
-    image: "https://via.placeholder.com/300"
+    image: assets.product2
   },
   {
     id: 2,
     name: "Party Gown",
     category: "Party",
+    fabric: "Silk",
     price: 2499,
-    image: "https://via.placeholder.com/300"
+    image: assets.product2
   },
   {
     id: 3,
     name: "Wedding Lehenga",
     category: "Wedding",
+    fabric: "Net",
     price: 5999,
-    image: "https://via.placeholder.com/300"
+    image: assets.product2
   },
   {
     id: 4,
     name: "Denim One Piece",
     category: "Casual",
+    fabric: "Denim",
     price: 1499,
-    image: "https://via.placeholder.com/300"
+    image: assets.product2
   }
 ];
 
 const Dresses = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [searchTerm, setSearchTerm] = useState("");
   const [maxPrice, setMaxPrice] = useState(6000);
+  const [sortOrder, setSortOrder] = useState("");
+  const [selectedFabric, setSelectedFabric] = useState("All");
 
-  const filteredProducts = productData.filter((product) => {
-    return (
-      (selectedCategory === "All" || product.category === selectedCategory) &&
-      product.price <= maxPrice &&
-      product.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  });
+  // 🔹 Dynamic Fabric List
+  const fabricTypes = ["All", ...new Set(productData.map(p => p.fabric))];
+
+  // 🔹 Filtering First
+  let filteredProducts = productData.filter(product =>
+    product.price <= maxPrice &&
+    (selectedFabric === "All" || product.fabric === selectedFabric)
+  );
+
+  // 🔹 Sorting After Filtering
+  if (sortOrder === "low") {
+    filteredProducts = [...filteredProducts].sort((a, b) => a.price - b.price);
+  } else if (sortOrder === "high") {
+    filteredProducts = [...filteredProducts].sort((a, b) => b.price - a.price);
+  }
 
   return (
     <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] py-12 bg-gradient-to-b from-[#fffaf2] to-[#f8f3ea]">
       
-      {/* Title */}
       <h1 className="text-3xl font-semibold mb-8 text-center">
         All Dresses Collection
       </h1>
@@ -55,28 +67,43 @@ const Dresses = () => {
       {/* Filters */}
       <div className="grid md:grid-cols-3 gap-6 mb-10">
 
-        {/* Category Filter */}
-        <select
-          className="p-3 border rounded-lg"
-          onChange={(e) => setSelectedCategory(e.target.value)}
-        >
-          <option value="All">All Category</option>
-          <option value="Casual">Casual</option>
-          <option value="Party">Party</option>
-          <option value="Wedding">Wedding</option>
-        </select>
-
-        {/* Search */}
-        <input
-          type="text"
-          placeholder="Search dress..."
-          className="p-3 border rounded-lg"
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-
-        {/* Price Filter */}
+        {/* Sort */}
         <div>
-          <label className="block mb-2">
+          <label className="block mb-2 font-medium">
+            Sort By Price
+          </label>
+          <select
+            value={sortOrder}
+            onChange={(e) => setSortOrder(e.target.value)}
+            className="w-full border p-2 rounded-lg"
+          >
+            <option value="">Default</option>
+            <option value="low">Low to High</option>
+            <option value="high">High to Low</option>
+          </select>
+        </div>
+
+        {/* Fabric */}
+        <div>
+          <label className="block mb-2 font-medium">
+            Fabric Type
+          </label>
+          <select
+            value={selectedFabric}
+            onChange={(e) => setSelectedFabric(e.target.value)}
+            className="w-full border p-2 rounded-lg"
+          >
+            {fabricTypes.map((fabric, index) => (
+              <option key={index} value={fabric}>
+                {fabric}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* Price Range */}
+        <div>
+          <label className="block mb-2 font-medium">
             Max Price: ₹{maxPrice}
           </label>
           <input
@@ -85,13 +112,14 @@ const Dresses = () => {
             max="6000"
             step="500"
             value={maxPrice}
-            onChange={(e) => setMaxPrice(e.target.value)}
+            onChange={(e) => setMaxPrice(Number(e.target.value))}
             className="w-full"
           />
         </div>
+
       </div>
 
-      {/* Products Grid */}
+      {/* Products */}
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
@@ -102,7 +130,7 @@ const Dresses = () => {
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-60 object-cover rounded-lg"
+                className="w-full object-cover rounded-lg"
               />
               <h2 className="mt-4 text-lg font-medium">
                 {product.name}
