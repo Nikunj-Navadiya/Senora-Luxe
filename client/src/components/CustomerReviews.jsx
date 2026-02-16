@@ -1,66 +1,97 @@
 import React from "react";
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+
+const reviews = [
+  {
+    name: "Riya Rawat",
+    date: "October 1, 2024 10:52 AM",
+    rating: 5,
+    review:
+      "Lahenga is same as the pic.... Gorgeous 😍 Go for it 💙💜",
+    initial: "R",
+    bgColor: "bg-orange-500",
+  },
+  {
+    name: "Kavita Singh",
+    date: "July 15, 2025 10:52 PM",
+    rating: 4.5,
+    review:
+      "Satisfied with their service always.I have been purchasing from them for 1 year.. trust worthy",
+    initial: "K",
+    bgColor: "bg-blue-400",
+  },
+  {
+    name: "Uma Devi",
+    date: "September 15, 2025 03:52 PM",
+    rating: 5,
+    review:
+      "Super products.. Material quality good.. Thank you Senora-Luxe.",
+    initial: "U",
+    bgColor: "bg-pink-500",
+  },
+];
+
+const renderStars = (rating) => {
+  const stars = [];
+
+  for (let i = 1; i <= 5; i++) {
+    if (i <= Math.floor(rating)) {
+      stars.push(<FaStar key={i} />);
+    } else if (i - rating < 1) {
+      stars.push(<FaStarHalfAlt key={i} />);
+    } else {
+      stars.push(<FaRegStar key={i} />);
+    }
+  }
+
+  return stars;
+};
 
 const CustomerReviews = () => {
-    return (
-        <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] py-12 bg-gradient-to-b from-[#fffaf2] to-[#f8f3ea]">
-            <div>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold bg-gradient-to-r from-[#b9935a] to-[#e6c77c] bg-clip-text text-center text-transparent tracking-wide">
-                    What Our Customers Say
-                </h1>
+  return (
+    <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] py-12 bg-gradient-to-b from-[#fffaf2] to-[#f3e4c8]">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold bg-gradient-to-r from-[#b9935a] to-[#e6c77c] bg-clip-text text-center text-transparent tracking-wide">
+        What Our Customers Say
+      </h1>
 
-                <div className="mt-10 grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-12 grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {reviews.map((item, index) => (
+          <div
+            key={index}
+            className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300"
+          >
+            {/* Header */}
+            <div className="flex items-center gap-4">
+              <div
+                className={`w-12 h-12 flex items-center justify-center text-white font-bold text-lg rounded-full ${item.bgColor}`}
+              >
+                {item.initial}
+              </div>
 
-                    <div className="bg-white p-5 rounded-lg shadow-md">
-                        <h1 className="text-xl sm:text-2xl font-bold text-[#b9935a]">Priya Sharma</h1>
-                        <p className="text-gray-700 text-[18px]">“I absolutely loved the fabric quality and perfect fitting. The dress looks exactly like the picture, and delivery was fast. Very satisfied with my purchase experience.”</p>
-                    </div>
-
-                    <div className="bg-white p-5 rounded-lg shadow-md">
-                        <h1 className="text-xl sm:text-2xl font-bold text-[#b9935a]">Riya Patel</h1>
-                        <p className="text-gray-700 text-[18px]">“Beautiful design, soft material, and affordable price. The stitching is neat and comfortable to wear. I received many compliments. Definitely ordering again from this shop.”</p>
-                    </div>
-
-                    <div className="bg-white p-5 rounded-lg shadow-md">
-                        <h1 className="text-xl sm:text-2xl font-bold text-[#b9935a]">Anjali Verma</h1>
-                        <p className="text-gray-700 text-[18px]">“The color is vibrant and the cloth feels premium. Size fitting is accurate and packaging was nice. Great customer service and smooth delivery experience.”</p>
-                    </div>
-
-                    <div className="bg-white p-5 rounded-lg shadow-md">
-                        <h1 className="text-xl sm:text-2xl font-bold text-[#b9935a]">Neha Gupta</h1>
-                        <p className="text-gray-700 text-[18px]">“I am very happy with this purchase. The material is soft, comfortable, and stylish. Perfect for special occasions and daily wear. Highly recommended shop.”</p>
-                    </div>
-
-                    <div className="bg-white p-5 rounded-lg shadow-md">
-                        <h1 className="text-xl sm:text-2xl font-bold text-[#b9935a]">Kavita Singh</h1>
-                        <p className="text-gray-700 text-[18px]">“Excellent quality product at reasonable price. The gown looks elegant and classy. Delivery was on time and overall experience was very good.”</p>
-                    </div>
-
-                    <div className="bg-white p-5 rounded-lg shadow-md">
-                        <h1 className="text-xl sm:text-2xl font-bold text-[#b9935a]">Sneha Joshi</h1>
-                        <p className="text-gray-700 text-[18px]">“The dress looks exactly as shown online. Soft fabric, beautiful color, and great stitching quality. Worth every rupee spent on this purchase.”</p>
-                    </div>
-
-                    <div className="bg-white p-5 rounded-lg shadow-md">
-                        <h1 className="text-xl sm:text-2xl font-bold text-[#b9935a]">Meera Shah</h1>
-                        <p className="text-gray-700 text-[18px]">“Affordable pricing with premium material quality. Very comfortable and lightweight fabric. Quick delivery and safe packaging. Loved shopping from this store.”</p>
-                    </div>
-
-                     <div className="bg-white p-5 rounded-lg shadow-md">
-                        <h1 className="text-xl sm:text-2xl font-bold text-[#b9935a]">Aarti Desai</h1>
-                        <p className="text-gray-700 text-[18px]">“Super stylish collection with perfect size options. Fabric feels comfortable and breathable. I will definitely recommend this clothing shop to others.”</p>
-                    </div>
-                    
-                    <div className="bg-white p-5 rounded-lg shadow-md">
-                        <h1 className="text-xl sm:text-2xl font-bold text-[#b9935a]">Komal Yadav</h1>
-                        <p className="text-gray-700 text-[18px]">“Beautiful gown with excellent finishing. The material quality is impressive and looks very elegant. Overall shopping experience was smooth and satisfying.”</p>
-                    </div>
-
-                </div>
-
-
+              <div>
+                <h2 className="font-semibold text-lg text-gray-800">
+                  {item.name}
+                </h2>
+                <p className="text-sm text-gray-500">{item.date}</p>
+              </div>
             </div>
-        </div>
-    )
-}
+
+            {/* Stars */}
+            <div className="flex gap-1 mt-3 text-orange-500 text-lg">
+              {renderStars(item.rating)}
+            </div>
+
+            {/* Review Text */}
+            <p className="text-gray-700 mt-3 text-[15px] leading-relaxed">
+              {item.review}
+            </p>
+
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default CustomerReviews;
