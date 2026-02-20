@@ -23,7 +23,10 @@ import about2 from './about2.png'
 import about3 from './about3.png'
 import about4 from './about4.png'
 import about5 from './about5.png'
-import contact from './contact.png'
+import contact1 from './contact1.svg'
+import contact2 from './contact2.svg'
+import contact3 from './contact3.svg'
+import contact4 from './contact4.svg'
 import favicons from './favicons.png'
 import footer from './footer.jpg'
 
@@ -54,7 +57,10 @@ const assets = {
     about3,
     about4,
     about5,
-    contact,
+    contact1,
+    contact2,
+    contact3,
+    contact4,
     favicons,
     footer,
 }

@@ -31,20 +31,49 @@ const Contact = () => {
   };
 
   return (
-    <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] py-5 xl:py-8 2xl:py-10">
-      <div className="flex flex-col-reverse md:flex-row items-center gap-12">
+    <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] py-5 xl:py-8 2xl:py-10 bg-gray-50">
+      <div className="flex flex-col-reverse lg:flex-row items-center gap-8">
 
-        {/* Image Section */}
-        <div className="w-full lg:w-1/2">
-          <img
-            src={assets.contact}
-            alt="Contact"
-            className="w-full max-w-sm mx-auto"
-          />
+        {/* Stay Connected Section */}
+        <div className="w-full lg:w-1/2 border border-gray-100 bg-white shadow-xl rounded-xl p-5 lg:h-[485px] 2xl:h-[520px]">
+          <div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl  2xl:text-5xl font-bold drop-shadow-lg leading-tight mb-10 text-[#0f484e] ">
+              Stay Connected
+            </h2>
+
+            <div className="grid gap-10 sm:grid-cols-2 text-center">
+
+              <div >
+                <img src={assets.contact1} alt="Contact 1" className="w-10 mx-auto mb-2" />
+                <p className="text-[20px] text-gray-950 font-semibold">Phone Number</p>
+                <a href="https://wa.me/918469670927"><p className="text-gray-800 text-[18px]">+91 84696 70927</p></a>
+              </div>
+
+              <div >
+                <img src={assets.contact2} alt="Contact 1" className="w-10 mx-auto mb-2" />
+                <p className="text-[20px] text-gray-950 font-semibold">Email</p>
+                <a href="mailto:support@senoraluxe.com"><p className="text-gray-800 text-[18px]">support@senoraluxe.com</p></a>
+              </div>
+
+              <div >
+                <img src={assets.contact3} alt="Contact 1" className="w-10 mx-auto mb-2" />
+                <p className="text-[20px] text-gray-950 font-semibold">Location</p>
+                <p className="text-gray-800 text-[18px]">140-143, Raghuvir Shoppers, Near Lajamani Chowk, Mota Varchha, Surat, Gujarat, India</p>
+              </div>
+
+              <div >
+                <img src={assets.contact4} alt="Contact 1" className="w-10 mx-auto mb-2" />
+                <p className="text-[20px] text-gray-950 font-semibold">Working Hours</p>
+                <p className="text-gray-800 text-[18px]">Monday To Saturday <br /> 09:00 AM To 06:00 PM</p>
+              </div>
+
+            </div>
+
+          </div>
         </div>
 
         {/* Form Section */}
-        <div className="w-full lg:w-1/2">
+        <div className="w-full lg:w-1/2 border border-gray-100 bg-white shadow-xl rounded-xl p-5 lg:h-[485px] 2xl:h-[520px]">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl  2xl:text-5xl font-bold drop-shadow-lg leading-tight mb-3 text-[#0f484e] ">
             Contact Us
           </h2>
@@ -110,7 +139,7 @@ const Contact = () => {
                 Message
               </label>
               <textarea
-                rows="4"
+                rows="3"
                 name="message"
                 value={formData.message} onChange={handleChange}
                 placeholder="Write your message..."
@@ -121,14 +150,29 @@ const Contact = () => {
             {/* Button */}
             <button
               type="submit"
-              className="w-full text-xl bg-black text-white py-3 rounded-md font-medium hover:bg-gray-800 transition"
+              className="w-full text-xl bg-black text-white py-3 rounded-md font-medium hover:bg-gray-800 transition cursor-pointer"
             >
               Send Message
             </button>
 
           </form>
         </div>
+
       </div>
+
+<div className="w-full max-w-6xl mx-auto my-10">
+  <div className="rounded-xl overflow-hidden shadow-lg">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2832.6435150108355!2d72.88497287380423!3d21.24166038043496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f0410717e69%3A0x1bbb06f8e47306bd!2sRaghuvir%20Shoppers%20SR%20enterprises!5e1!3m2!1sen!2sin!4v1771567905589!5m2!1sen!2sin"
+      className="w-full h-[450px]"
+      allowFullScreen
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</div>
+
+      
     </div>
   );
 };

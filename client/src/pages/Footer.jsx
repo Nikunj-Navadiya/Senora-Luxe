@@ -18,7 +18,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="bg-cover bg-center"
+        <footer className="bg-cover bg-center font-family-poppins"
             style={{ backgroundImage: `url(${assets.footer})` }}>
             <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] pt-10 lg:pt-14 bg-white/70">
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-2 lg:gap-10">
@@ -26,7 +26,7 @@ const Footer = () => {
                     {/* Logo */}
                     <div>
                         <Link to="/">
-                            <img src={assets.logo1} alt="Krishnas Jewellers" className="w-40 mb-4" />
+                            <img src={assets.logo1} alt="Krishnas Jewellers" className="w-52 mb-4" />
                         </Link>
                         <p className="text-lg leading-6">
                             Premium fabric platform offering stylish, high-quality textiles online effortlessly.
@@ -142,8 +142,8 @@ const Footer = () => {
                             Contact Us
                         </h3>
                         <div className="text-lg space-y-2">
-                            <p>📞 +91 84696 70927</p>
-                            <p>✉️ support@senoraluxe.com</p>
+                            <a href="https://wa.me/918469670927"><p>📞 +91 84696 70927</p></a>
+                            <a href="mailto:support@senoraluxe.com"><p>✉️ support@senoraluxe.com</p></a>
                             <p>📍 140-143, Raghuvir Shoppers, Near Lajamani Chowk, Mota Varchha, Surat, Gujarat, India</p>
                         </div>
                     </div>
