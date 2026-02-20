@@ -59,8 +59,8 @@ const Dresses = () => {
 
   return (
     <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] py-12 bg-gradient-to-b from-[#fffaf2] to-[#f8f3ea]">
-      
-      <h1 className="text-3xl font-semibold mb-8 text-center">
+
+      <h1 className="text-center mb-5 text-3xl sm:text-4xl md:text-5xl font-semibold bg-gradient-to-r from-[#b9935a] to-[#e6c77c] bg-clip-text text-transparent tracking-wide">
         All Dresses Collection
       </h1>
 

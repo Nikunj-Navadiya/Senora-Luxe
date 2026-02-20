@@ -1,5 +1,5 @@
 import React from 'react'
-import { HashRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
 import Header from './components/Header'
 import Login from './pages/Login'
@@ -13,31 +13,47 @@ import Termsofservice from './components/Termsofservice'
 import Contact from './pages/Contact'
 import Dresses from './components/Dresses'
 
-function App() {
+function Layout() {
+  const location = useLocation()
+
   return (
     <>
-      <HashRouter>
-        <ScrollToTop />
-        <div>
+      <ScrollToTop />
+
+      {/* Home page ma normal header */}
+      {location.pathname === "/" ? (
           <Header />
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/privacy-policy' element={<Privacypolicy />} />
-            <Route path='/Refund-policy' element={<Refundpolicy />} />
-            <Route path='/Shipping-policy' element={<Shippingpolicy />} />
-            <Route path='/Termsofservice-policy' element={<Termsofservice />} />
-            <Route path='/contact' element={<Contact />} />
-            <Route path='/dresses' element={<Dresses />} />
-
-
-            
-          </Routes>
-          <Footer />
+      ) : (
+        <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-sm">
+          <Header />
         </div>
-      </HashRouter>
+      )}
+
+      {/* Fixed header hoy to content ne padding aapvu jaruri */}
+      <div className={location.pathname === "/" ? "" : "pt-20"}>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/privacy-policy' element={<Privacypolicy />} />
+          <Route path='/Refund-policy' element={<Refundpolicy />} />
+          <Route path='/Shipping-policy' element={<Shippingpolicy />} />
+          <Route path='/Termsofservice-policy' element={<Termsofservice />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/dresses' element={<Dresses />} />
+        </Routes>
+      </div>
+
+      <Footer />
     </>
+  )
+}
+
+function App() {
+  return (
+    <HashRouter>
+      <Layout />
+    </HashRouter>
   )
 }
 

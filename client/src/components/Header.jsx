@@ -46,7 +46,7 @@ const Header = () => {
     };
 
     return (
-        <header className="w-full  top-0 left-0 bg-white shadow-md z-50">
+        <header className="w-full  bg-white  z-50 ">
             {/* 🔹 Top Header Bar */}
             <div className="flex items-center justify-between text-[20px] font-semibold sm:px-[5vw] md:px-[7vw] lg:px-[9vw] px-4 py-4">
                 {/* Logo */}
