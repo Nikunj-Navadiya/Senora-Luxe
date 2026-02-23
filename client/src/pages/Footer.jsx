@@ -152,7 +152,7 @@ const Footer = () => {
 
                 {/* Footer Bottom */}
                 <div className="border-t border-gray-300 mt-10 lg:mt-12 pt-6 text-center md:text-right text-lg pb-5">
-                    © {new Date().getFullYear()} Senora Luxe. All Rights Reserved.
+                    © 2024 Senora Luxe. All Rights Reserved.
                 </div>
             </div>
         </footer>

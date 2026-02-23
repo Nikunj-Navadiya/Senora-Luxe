@@ -4,17 +4,25 @@ import assets from "../assets/assets";
 const productData = [
   {
     id: 1,
-    name: "Floral Summer Dress",
+    name: "Floral Summer Dress with Ruffles and Spaghetti Straps",
     category: "Casual",
     fabric: "Cotton",
+    descripstion: "A breezy and feminine dress perfect for warm weather, featuring a vibrant floral print, delicate ruffles, and adjustable spaghetti straps for a comfortable fit.",
+    Work: "Heavy Embroidery with Sequin Work",
+    Inner: "Heavy Micro Cotton",
+    Length: "50–51 inches",
     price: 999,
     image: assets.product2
   },
   {
     id: 2,
-    name: "Party Gown",
+    name: "Party Silk Gown with Sequins and Open Back Design",
     category: "Party",
     fabric: "Silk",
+    descripstion: "A breezy and feminine dress perfect for warm weather, featuring a vibrant floral print, delicate ruffles, and adjustable spaghetti straps for a comfortable fit.",
+    Work: "Heavy Embroidery with Sequin Work",
+    Inner: "Heavy Micro Cotton",
+    Length: "50–51 inches",
     price: 2499,
     image: assets.product2
   },
@@ -23,6 +31,10 @@ const productData = [
     name: "Wedding Lehenga",
     category: "Wedding",
     fabric: "Net",
+    descripstion: "A breezy and feminine dress perfect for warm weather, featuring a vibrant floral print, delicate ruffles, and adjustable spaghetti straps for a comfortable fit.",
+    Work: "Heavy Embroidery with Sequin Work",
+    Inner: "Heavy Micro Cotton",
+    Length: "50–51 inches",
     price: 5999,
     image: assets.product2
   },
@@ -31,9 +43,38 @@ const productData = [
     name: "Denim One Piece",
     category: "Casual",
     fabric: "Denim",
+    descripstion: "A breezy and feminine dress perfect for warm weather, featuring a vibrant floral print, delicate ruffles, and adjustable spaghetti straps for a comfortable fit.",
+    Work: "Heavy Embroidery with Sequin Work",
+    Inner: "Heavy Micro Cotton",
+    Length: "50–51 inches",
+    price: 1499,
+    image: assets.product2
+  },
+  {
+    id: 5,
+    name: "Denim One Piece",
+    category: "Casual",
+    fabric: "Denim",
+    descripstion: "A breezy and feminine dress perfect for warm weather, featuring a vibrant floral print, delicate ruffles, and adjustable spaghetti straps for a comfortable fit.",
+    Work: "Heavy Embroidery with Sequin Work",
+    Inner: "Heavy Micro Cotton",
+    Length: "50–51 inches",
+    price: 1499,
+    image: assets.product2
+  },
+  {
+    id: 6,
+    name: "Denim One Piece",
+    category: "Casual",
+    fabric: "Denim",
+    descripstion: "A breezy and feminine dress perfect for warm weather, featuring a vibrant floral print, delicate ruffles, and adjustable spaghetti straps for a comfortable fit.",
+    Work: "Heavy Embroidery with Sequin Work",
+    Inner: "Heavy Micro Cotton",
+    Length: "50–51 inches",
     price: 1499,
     image: assets.product2
   }
+
 ];
 
 const Dresses = () => {
@@ -69,7 +110,7 @@ const Dresses = () => {
 
         {/* Sort */}
         <div>
-          <label className="block mb-2 font-medium">
+          <label className="block text-gray-800 mb-2 font-bold">
             Sort By Price
           </label>
           <select
@@ -85,7 +126,7 @@ const Dresses = () => {
 
         {/* Fabric */}
         <div>
-          <label className="block mb-2 font-medium">
+          <label className="block text-gray-800 mb-2 font-bold">
             Fabric Type
           </label>
           <select
@@ -103,7 +144,7 @@ const Dresses = () => {
 
         {/* Price Range */}
         <div>
-          <label className="block mb-2 font-medium">
+          <label className="block text-gray-800 mb-2 font-bold">
             Max Price: ₹{maxPrice}
           </label>
           <input
@@ -133,14 +174,15 @@ const Dresses = () => {
                 className="w-full object-cover rounded-lg"
               />
               <h2 className="mt-4 text-lg font-medium">
-                {product.name}
+                {product.name.split(" ").length > 4
+                  ? product.name.split(" ").slice(0, 4).join(" ") + "..."
+                  : product.name}
               </h2>
-              <p className="text-gray-500">{product.category}</p>
-              <p className="text-[#b9935a] font-semibold mt-2">
+              <p className="text-[#b9935a] text-lg font-semibold mt-2">
                 ₹{product.price}
               </p>
-              <button className="mt-4 w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition">
-                Add to Cart
+              <button className="mt-4 w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition cursor-pointer">
+                View Product
               </button>
             </div>
           ))
