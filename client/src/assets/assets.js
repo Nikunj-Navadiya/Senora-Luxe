@@ -23,6 +23,10 @@ import about2 from './about2.png'
 import about3 from './about3.png'
 import about4 from './about4.png'
 import about5 from './about5.png'
+import about6 from './about6.png'
+import about7 from './about7.png'
+import about8 from './about8.png'
+import about9 from './about9.png'
 import contact1 from './contact1.svg'
 import contact2 from './contact2.svg'
 import contact3 from './contact3.svg'
@@ -57,6 +61,10 @@ const assets = {
     about3,
     about4,
     about5,
+    about6,
+    about7,
+    about8,
+    about9,
     contact1,
     contact2,
     contact3,
