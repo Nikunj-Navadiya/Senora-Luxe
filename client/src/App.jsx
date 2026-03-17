@@ -12,6 +12,7 @@ import Shippingpolicy from './components/Shippingpolicy'
 import Termsofservice from './components/Termsofservice'
 import Contact from './pages/Contact'
 import Dresses from './components/Dresses'
+import ProductDetails from "./pages/ProductDetails";
 
 function Layout() {
   const location = useLocation()
@@ -41,6 +42,7 @@ function Layout() {
           <Route path='/Termsofservice-policy' element={<Termsofservice />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/dresses' element={<Dresses />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
       </div>
 

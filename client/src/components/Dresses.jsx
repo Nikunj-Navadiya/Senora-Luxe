@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import assets from "../assets/assets";
+import { useNavigate } from "react-router-dom"; 
 
 const productData = [
   {
@@ -81,6 +82,7 @@ const Dresses = () => {
   const [maxPrice, setMaxPrice] = useState(6000);
   const [sortOrder, setSortOrder] = useState("");
   const [selectedFabric, setSelectedFabric] = useState("All");
+  const navigate = useNavigate();
 
   // 🔹 Dynamic Fabric List
   const fabricTypes = ["All", ...new Set(productData.map(p => p.fabric))];
@@ -181,7 +183,7 @@ const Dresses = () => {
               <p className="text-[#b9935a] text-lg font-semibold mt-2">
                 ₹{product.price}
               </p>
-              <button className="mt-4 w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition cursor-pointer">
+              <button onClick={() => navigate(`/product/${product.id}`)} className="mt-4 w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition cursor-pointer">
                 View Product
               </button>
             </div>
