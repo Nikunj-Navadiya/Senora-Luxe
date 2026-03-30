@@ -8,13 +8,13 @@ const productData = [
         name: "Floral Summer Dress with Ruffles and Spaghetti Straps",
         category: "Casual",
         fabric: "Cotton",
-        description: "A breezy and feminine dress perfect for warm weather, featuring a vibrant floral print, delicate ruffles, and adjustable spaghetti straps for a comfortable fit.",
-        Work: "Heavy Embroidery with Sequin Work",
+        description: "A breezy and feminine dress perfect for warm weather, featuring a vibrant floral print, delicate ruffles, and adjustable spaghetti straps for a comfortable fit. A breezy and feminine dress perfect for warm weather, featuring a vibrant floral print, delicate ruffles, and adjustable spaghetti straps for a comfortable fit. A breezy and feminine dress perfect for warm weather, featuring a vibrant floral print, delicate ruffles, and adjustable spaghetti straps for a comfortable fit.Heavy Embroidery with Sequin Work A breezy and feminine dress perfect for warm weather, featuring a vibrant floral print, delicate ruffles, and adjustable spaghetti straps for a comfortable fit. A breezy and feminine dress perfect for warm weather, featuring a vibrant floral print, delicate ruffles, and adjustable spaghetti straps for a comfortable fit. A breezy and feminine dress perfect for warm weather, featuring a vibrant floral print, delicate ruffles, and adjustable spaghetti straps for a comfortable fit.    ",
+        Work: "Heavy Embroidery with Sequin Work ",
         Inner: "Heavy Micro Cotton",
         Length: "50–51 inches",
         size: ["S", "M", "L", "XL"],
         price: 999,
-        image: assets.product2
+        image: [assets.product2, assets.product3, assets.product4, ]
     },
     {
         id: 2,
@@ -86,11 +86,13 @@ const productData = [
 const ProductDetails = () => {
     const { id } = useParams();
     const navigate = useNavigate();
-
+    const product = productData.find((p) => p.id === Number(id));
     const [selectedSize, setSelectedSize] = useState("");
     const [error, setError] = useState("");
+    const [mainImage, setMainImage] = useState(
+        product?.image?.[0]
+    );
 
-    const product = productData.find((p) => p.id === Number(id));
 
     if (!product) {
         return <h2 className="text-center mt-10">Product not found</h2>;
@@ -98,14 +100,38 @@ const ProductDetails = () => {
 
     return (
         <div className="px-6 md:px-20 py-10">
-            <div className="grid md:grid-cols-2 gap-10">
+            <div className="grid md:grid-cols-2 gap-10 ">
 
-                {/* Image */}
-                <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full rounded-lg shadow-md"
-                />
+                {/* ✅ LEFT SIDE IMAGE GALLERY */}
+                <div className="relative">
+                    <div className="sticky top-30 flex gap-4">
+
+                        {/* 🔹 THUMBNAILS */}
+                        <div className="flex flex-col gap-3">
+                            {product.image.map((img, index) => (
+                                <img
+                                    key={index}
+                                    src={img}
+                                    onClick={() => setMainImage(img)}
+                                    className={`w-20 h-25 object-cover rounded cursor-pointer border-2 ${mainImage === img
+                                            ? "border-black"
+                                            : "border-gray-300"
+                                        }`}
+                                />
+                            ))}
+                        </div>
+
+                        {/* 🔹 MAIN IMAGE */}
+                        <div>
+                            <img
+                                src={mainImage}
+                                alt="product"
+                                className="w-auto xl:h-[450px] 2xl:h-[650px] object-contain rounded-lg shadow-md"
+                            />
+                        </div>  
+
+                    </div>
+                </div>
 
                 {/* Details */}
                 <div>
@@ -138,11 +164,10 @@ const ProductDetails = () => {
                                         setSelectedSize(size);
                                         setError("");
                                     }}
-                                    className={`px-4 py-2 border cursor-pointer rounded-lg ${
-                                        selectedSize === size
-                                            ? "bg-black text-white"
-                                            : "bg-white text-black"
-                                    }`}
+                                    className={`px-4 py-2 border cursor-pointer rounded-lg ${selectedSize === size
+                                        ? "bg-black text-white"
+                                        : "bg-white text-black"
+                                        }`}
                                 >
                                     {size}
                                 </button>
@@ -164,11 +189,10 @@ const ProductDetails = () => {
                             }
                         }}
                         disabled={!selectedSize}
-                        className={`mt-6 px-6 py-2 rounded-lg ${
-                            selectedSize
-                                ? "bg-black text-white cursor-pointer"
-                                : "bg-gray-400 text-white cursor-not-allowed"
-                        }`}
+                        className={`mt-6 px-6 py-2 rounded-lg ${selectedSize
+                            ? "bg-black text-white cursor-pointer"
+                            : "bg-gray-400 text-white cursor-not-allowed"
+                            }`}
                     >
                         Add to Cart
                     </button>
