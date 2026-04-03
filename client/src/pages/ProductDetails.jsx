@@ -14,7 +14,7 @@ const productData = [
         Length: "50–51 inches",
         size: ["S", "M", "L", "XL"],
         price: 999,
-        image: [assets.product2, assets.product3, assets.product4, ]
+        image: [assets.product2, assets.product3, assets.product4, assets.product3,]
     },
     {
         id: 2,
@@ -104,31 +104,31 @@ const ProductDetails = () => {
 
                 {/* ✅ LEFT SIDE IMAGE GALLERY */}
                 <div className="relative">
-                    <div className="sticky top-30 flex gap-4">
+                    <div className="sticky top-20 flex flex-col md:flex-row gap-4">
 
-                        {/* 🔹 THUMBNAILS */}
-                        <div className="flex flex-col gap-3">
+                        {/* 🔹 MAIN IMAGE (Mobile ઉપર, Desktop right) */}
+                        <div className="flex justify-center order-1 md:order-2">
+                            <img
+                                src={mainImage}
+                                alt="product"
+                                className="w-full max-w-[300px] md:max-w-none xl:h-[450px] 2xl:h-[650px] object-contain rounded-lg shadow-md"
+                            />
+                        </div>
+
+                        {/* 🔹 THUMBNAILS (Mobile નીચે, Desktop left) */}
+                        <div className="flex gap-3 overflow-x-auto md:flex-col md:overflow-visible order-2 md:order-1">
                             {product.image.map((img, index) => (
                                 <img
                                     key={index}
                                     src={img}
                                     onClick={() => setMainImage(img)}
-                                    className={`w-20 h-25 object-cover rounded cursor-pointer border-2 ${mainImage === img
+                                    className={`w-20 h-24 object-cover rounded cursor-pointer border-2 ${mainImage === img
                                             ? "border-black"
                                             : "border-gray-300"
                                         }`}
                                 />
                             ))}
                         </div>
-
-                        {/* 🔹 MAIN IMAGE */}
-                        <div>
-                            <img
-                                src={mainImage}
-                                alt="product"
-                                className="w-auto xl:h-[450px] 2xl:h-[650px] object-contain rounded-lg shadow-md"
-                            />
-                        </div>  
 
                     </div>
                 </div>
